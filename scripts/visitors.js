@@ -203,7 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <td>${escapeHtml(v.status)}</td>
           <td>
             <button class="btn btn-info btn-sm view-btn" data-id="${v.id}">View</button>
-            ${v.time_in === undefined ? `<button class="btn btn-success btn-sm entry-btn" data-id="${v.id}">Mark Entry</button>` : ""}
             ${v.time_out == null && v.time_in != null ? `<button class="btn btn-danger btn-sm exit-btn" data-id="${v.id}">Mark Exit</button>` : ""}
           </td>
         `;
