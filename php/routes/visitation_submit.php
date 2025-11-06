@@ -115,6 +115,16 @@ if ($success) {
     $token = $_SESSION['user_token'] ?? null;
     log_landing_action($pdo, $token, "Submitted visitation request form");
 
+    // Notify admins/personnel if visitor has history
+    require '../utils/notify.php';
+    notify_admin_about_visitor_history($pdo, [
+        'first_name' => $first_name,
+        'middle_name' => $middle_name,
+        'last_name' => $last_name,
+        'email' => $email,
+        'contact_number' => $contact_number
+    ]);
+
     echo "<script>alert('Visitation request submitted successfully!'); window.location.href='../routes/Pages/home-page.php';</script>";
 } else {
     echo "<script>alert('Error saving request. Please try again.'); window.history.back();</script>";

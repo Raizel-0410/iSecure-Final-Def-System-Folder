@@ -1,7 +1,8 @@
-# TODO: Move Inline Styles from visitorDetailsModal to visitors.css
+# TODO: Implement Visitor History Notification Function
 
-## Steps to Complete:
-- [x] Step 1: Edit `php/routes/visitors.php` to remove all inline `style` attributes from the `visitorDetailsModal` elements.
-- [x] Step 2: Edit `stylesheet/visitors.css` to add the moved styles under a new organized section `/* Visitor Details Modal Styles */`, grouped by modal parts (Dialog, Content, Header, Body, Table, Images, Tabs).
-- [ ] Step 3: Verify the modal renders correctly with styles applied from CSS.
-- [ ] Step 4: Test responsiveness and functionality of the modal tabs.
+## Steps to Complete
+
+- [x] Create `php/utils/notify.php` with `notify_admin_about_visitor_history` function to check visitor history and notify admins/personnel.
+- [x] Modify `php/routes/visitation_submit.php` to require `notify.php` and call the function after successful request insertion.
+- [ ] Test the notification system by submitting a visitation request for a visitor with existing history.
+- [ ] Verify that notifications appear in admin/personnel dashboards.
