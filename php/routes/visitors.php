@@ -203,14 +203,14 @@ if (!empty($session['user_id'])) {
 
 <!-- Updated modal to match requested style with verification tabs -->
 <div class="modal fade" id="visitorDetailsModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog" style="max-width: 95vw;">
-    <div class="modal-content" style="background-color: #ffffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); height: auto; max-height: 90vh;">
-      <div class="modal-header" style="border-bottom: none; padding-bottom: 0.5rem;">
+  <div class="modal-dialog visitor-details-modal-dialog">
+    <div class="modal-content visitor-details-modal-content">
+      <div class="modal-header visitor-details-modal-header">
         <h5 class="modal-title">Visitor Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-        <div class="modal-body" style="background-color: white; border-radius: 12px; padding: 1rem; overflow-x: auto;">
-          <ul class="nav nav-tabs mt-4" id="visitorTab" role="tablist" style="border-bottom: none;">
+        <div class="modal-body visitor-details-modal-body">
+          <ul class="nav nav-tabs mt-4 visitor-details-nav-tabs" id="visitorTab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="true">Details</button>
             </li>
@@ -228,8 +228,8 @@ if (!empty($session['user_id'])) {
             </li>
           </ul>
           <div id="visitorDetailsSection">
-            <div class="table-responsive" style="overflow-x: auto; max-width: 100%; max-height: 400px;">
-              <table class="table table-bordered text-center mb-0" style="table-layout: auto; white-space: nowrap; min-width: 1200px;">
+            <div class="table-responsive visitor-details-table-responsive">
+              <table class="table table-bordered text-center mb-0 visitor-details-table">
                 <thead class="bg-info text-white">
                   <tr>
                     <th>Name</th>
@@ -249,7 +249,7 @@ if (!empty($session['user_id'])) {
                 </thead>
                 <tbody>
                   <tr>
-                    <td id="visitorNameCell" style="font-weight: 600;"></td>
+                    <td id="visitorNameCell" class="visitor-name-cell"></td>
                     <td id="visitorAddressCell"></td>
                     <td id="visitorContactCell"></td>
                     <td id="visitorEmailCell"></td>
@@ -269,16 +269,16 @@ if (!empty($session['user_id'])) {
           <div class="d-flex justify-content-center gap-4 mt-4">
             <div class="text-center">
               <strong>Valid ID</strong><br>
-              <img id="visitorIDPhoto" src="" alt="Valid ID" style="max-width: 150px; max-height: 100px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+              <img id="visitorIDPhoto" src="" alt="Valid ID" class="visitor-id-photo">
             </div>
             <div class="text-center">
               <strong>Selfie Photo</strong><br>
-              <img id="visitorSelfie" src="" alt="Selfie" style="max-width: 150px; max-height: 150px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+              <img id="visitorSelfie" src="" alt="Selfie" class="visitor-selfie-photo">
             </div>
           </div>
         </div>
 
-        <div class="tab-content" id="visitorTabContent" style="margin-top: 10px;">
+        <div class="tab-content visitor-details-tab-content" id="visitorTabContent">
           <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
             <!-- Details tab content can be repeated or customized if needed -->
             <button id="nextToVerify" class="btn btn-primary float-end">Verify</button>
@@ -289,18 +289,18 @@ if (!empty($session['user_id'])) {
             </div>
           </div>
           <div class="tab-pane fade" id="facial" role="tabpanel" aria-labelledby="facial-tab">
-            <div id="facialRecognitionContainer" style="min-height: 200px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
-              <div id="facialResult" style="margin-bottom: 15px;"></div>
+            <div id="facialRecognitionContainer" class="visitor-facial-container">
+              <div id="facialResult" class="visitor-facial-result"></div>
               <div class="row">
                 <div class="col-md-6">
                   <h5>Visitor Selfie</h5>
-                  <img id="facialSelfie" src="" alt="Selfie" style="width: 100%; height: 300px; object-fit: cover; border: 1px solid #ccc; border-radius: 8px;">
+                  <img id="facialSelfie" src="" alt="Selfie" class="visitor-facial-selfie">
                 </div>
                 <div class="col-md-6">
                   <h5>Live Camera</h5>
-                  <div style="position: relative; width: 100%; height: 300px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
-                    <img id="facialCamera" src="http://localhost:8000/camera/frame" alt="Live Camera" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 250px; border: 3px solid red; border-radius: 8px; pointer-events: none;"></div>
+                  <div class="visitor-facial-camera-container">
+                    <img id="facialCamera" src="http://localhost:8000/camera/frame" alt="Live Camera" class="visitor-facial-camera">
+                    <div class="visitor-facial-border"></div>
                   </div>
                 </div>
               </div>
@@ -311,22 +311,22 @@ if (!empty($session['user_id'])) {
             <button id="nextToVehicle" class="btn btn-primary float-end">Next</button>
           </div>
           <div class="tab-pane fade" id="vehicle" role="tabpanel" aria-labelledby="vehicle-tab">
-            <div id="vehicleRecognitionContainer" style="min-height: 200px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
+            <div id="vehicleRecognitionContainer" class="visitor-vehicle-container">
               <div class="row">
                 <div class="col-md-6">
                   <h5>Expected Plate Number</h5>
-                  <p id="expectedPlate" style="font-size: 24px; font-weight: bold; text-align: center; padding: 20px; border: 2px solid #007bff; border-radius: 8px; background-color: #f8f9fa;"></p>
+                  <p id="expectedPlate" class="visitor-expected-plate"></p>
                 </div>
                 <div class="col-md-6">
                   <h5>Live Camera</h5>
-                  <div style="position: relative; width: 100%; height: 240px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
-                    <img id="vehicleCamera" src="http://localhost:8000/camera/frame" alt="Live Camera" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 450px; height: 225px; border: 4px solid red; border-radius: 8px; pointer-events: none;"></div>
+                  <div class="visitor-vehicle-camera-container">
+                    <img id="vehicleCamera" src="http://localhost:8000/camera/frame" alt="Live Camera" class="visitor-vehicle-camera">
+                    <div class="visitor-vehicle-border"></div>
                   </div>
                 </div>
               </div>
               <button id="recognizeVehicleBtn" class="btn btn-success mt-3">Recognize Vehicle</button>
-              <div id="vehicleResult" style="margin-top: 15px;"></div>
+              <div id="vehicleResult" class="visitor-vehicle-result"></div>
             </div>
             <button id="skipVehicle" class="btn btn-secondary float-start">Skip</button>
             <button id="nextToId" class="btn btn-primary float-end">Next</button>
@@ -336,11 +336,11 @@ if (!empty($session['user_id'])) {
               <div class="col-md-6">
                 <div class="text-center">
                   <h5>ID Image</h5>
-                  <img id="idTabImage" src="" alt="ID Image" style="max-width: 100%; max-height: 300px; border: 1px solid #ccc; border-radius: 8px;">
+                  <img id="idTabImage" src="" alt="ID Image" class="visitor-id-tab-image">
                 </div>
               </div>
               <div class="col-md-6">
-                <div id="ocrResults" style="min-height: 200px; border: 1px solid #ccc; border-radius: 8px; padding: 15px; background-color: #f8f9fa;">
+                <div id="ocrResults" class="visitor-ocr-results">
                   <h5>Extracted ID Details</h5>
                   <div id="ocrContent">
                     <p class="text-muted">Processing ID image for OCR...</p>

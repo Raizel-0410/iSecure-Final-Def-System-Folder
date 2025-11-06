@@ -13,8 +13,6 @@
           <li><i class="fa-solid fa-image-portrait"></i><a href="key_card.php"> Key Card</a></li>
           <li><i class="fa-solid fa-image-portrait"></i><a href="key_card_list.php"> Key Cad List</a></li>
           <li><i class="fa-solid fa-image-portrait"></i><a href="visit_logs.php"> Visit Log</a></li>
-          <h6>CUSTOMIZATION</h6>
-          <li><i class="fa-solid fa-newspaper"></i><a href="customizelanding.php"> Landing Page</a></li>
         </ul>
       </div>
 </div>

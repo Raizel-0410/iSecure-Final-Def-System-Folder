@@ -6,6 +6,7 @@
     overflow-x: hidden;
 }
 
+/*
 /* Fix .body overflow to allow scrolling */
 .body {
     display: flex;
@@ -14,24 +15,7 @@
     overflow: auto;
     background-color: #F5F5F5;
 }
-
-/* Add styles for expectedVisitorsTable, insideVisitorsTable, and exitedVisitorsTable similar to visitorsTable */
-#expectedVisitorsTable,
-#insideVisitorsTable,
-#exitedVisitorsTable {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 8px;
-    border: #006682;
-    margin-top: 20px;
-}
-
-/* Make tables scrollable vertically and horizontally, with fixed header */
-.table-responsive {
-    max-height: 300px; /* Adjust height as needed */
-    overflow-y: auto;
-    overflow-x: auto;
-}
+*/
 
 /* Ensure full width layout for body and containers */
 html, body, .body {
@@ -41,6 +25,7 @@ html, body, .body {
     overflow-x: auto; /* Allow horizontal scroll if needed, but prevent forced zoom */
 }
 
+/*
 .vehicles-container {
     width: 100%;
     max-width: 100%;
@@ -48,6 +33,7 @@ html, body, .body {
     padding: 0 10px;
     box-sizing: border-box;
 }
+*/
 
 .table-responsive table {
     width: 100%;
@@ -62,6 +48,7 @@ html, body, .body {
     z-index: 10;
 }
 
+/*
 #expectedVisitorsTable th,
 #expectedVisitorsTable td,
 #insideVisitorsTable th,
@@ -72,6 +59,7 @@ html, body, .body {
     text-align: center;
     border: none;
 }
+*/
 
 #expectedVisitorsTable th,
 #insideVisitorsTable th,
@@ -81,6 +69,7 @@ html, body, .body {
     font-weight: bold;
 }
 
+/*
 #expectedVisitorsTable tr,
 #expectedVisitorsTable td,
 #insideVisitorsTable tr,
@@ -90,6 +79,7 @@ html, body, .body {
     background: transparent;
     box-shadow: none;
 }
+*/
 
 /* Add spacing between table headers and content */
 h5 {
@@ -142,7 +132,7 @@ p {
     padding: 0 15px;
 }
 
-.header-left, 
+.header-left,
 .header-right {
     display: flex;
     align-items: center;
@@ -201,13 +191,6 @@ p {
     font-weight: 900;
 }
 
-.header-rght i {
-    height: 30px;
-    width: 30px;
-    align-self: center;
-    justify-self: center;
-}
-
 .fa-user-circle {
     height: 30px;
     width: 30px;
@@ -227,6 +210,7 @@ p {
     background-color: transparent;
 }
 
+/*
 /* =====================
    Custom Modal Styling
    ===================== */
@@ -301,6 +285,7 @@ p {
 .modal-footer .btn-secondary:hover {
   background-color: #5a6268;
 }
+*/
 
 /* === Vehicles Table Styling (same as Visitors) === */
 .vehicles-container {
@@ -356,8 +341,8 @@ p {
   box-shadow: none !important;
 }
 
-
 /* Action buttons inside table */
+/*
 #expectedVisitorsTable .btn,
 #insideVisitorsTable .btn,
 #exitedVisitorsTable .btn {
@@ -368,6 +353,7 @@ p {
   margin: 0 2px;
   cursor: pointer;
 }
+*/
 
 #expectedVisitorsTable .btn-primary,
 #insideVisitorsTable .btn-primary,
@@ -375,6 +361,7 @@ p {
   background: #007bff;
   color: white;
 }
+
 #expectedVisitorsTable .btn-primary:hover,
 #insideVisitorsTable .btn-primary:hover,
 #exitedVisitorsTable .btn-primary:hover {
@@ -387,12 +374,14 @@ p {
   background: #dc3545;
   color: white;
 }
+
 #expectedVisitorsTable .btn-danger:hover,
 #insideVisitorsTable .btn-danger:hover,
 #exitedVisitorsTable .btn-danger:hover {
   background: #c82333;
 }
 
+/*
 #expectedVisitorsTable .status-badge,
 #insideVisitorsTable .status-badge,
 #exitedVisitorsTable .status-badge {
@@ -403,6 +392,7 @@ p {
   font-weight: bold;
   color: white;
 }
+*/
 
 #expectedVisitorsTable .status-active,
 #insideVisitorsTable .status-active,
@@ -415,7 +405,6 @@ p {
 #exitedVisitorsTable .status-inactive {
   background: #dc3545;
 }
-
 
 /* =====================
    Responsive tweaks
@@ -711,4 +700,206 @@ p {
   margin-bottom: 5px;
   font-weight: 600;
   font-size: 14px;
+}
+
+/* Visitor Details Modal Styles */
+.visitor-details-modal-dialog {
+  max-width: 90vw;
+  width: 90vw;
+}
+
+.visitor-details-modal-content {
+  border-radius: 12px;
+}
+
+.visitor-details-modal-header {
+  background-color: white;
+  color: #e0f2f1;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+}
+
+.visitor-details-modal-body {
+  font-family: 'League Spartan', sans-serif;
+  color: #e0f2f1;
+  line-height: 1.6;
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: white;
+  padding: 30px;
+  overflow-y: auto;
+  display: block;
+}
+
+.visitor-details-nav-tabs {
+  border-bottom: 2px solid #2789A4;
+  overflow-y: hidden;
+}
+
+.visitor-details-nav-tabs .nav-link {
+  color: #e0f2f1;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  margin-right: 5px;
+  background-color: transparent;
+}
+
+.visitor-details-nav-tabs .nav-link.active {
+  color: #004d40;
+  background-color: #e0f2f1;
+  border-radius: 12px 12px 0 0;
+  font-weight: 700;
+  box-shadow: 0 -3px 8px rgba(0, 77, 64, 0.4);
+}
+
+.visitor-details-tab-content {
+  background-color: #e0f2f1;
+  border-radius: 0;
+  padding: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 77, 64, 0.1);
+}
+
+.visitor-details-table-responsive {
+  overflow-x: auto;
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.visitor-details-table {
+  table-layout: auto;
+  white-space: nowrap;
+  min-width: 1200px;
+}
+
+.visitor-name-cell {
+  font-weight: 600;
+}
+
+.visitor-id-photo,
+.visitor-selfie-photo {
+  max-width: 150px;
+  max-height: 100px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Facial Recognition Styles */
+.visitor-facial-container {
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.visitor-facial-result {
+  margin-bottom: 15px;
+}
+
+.visitor-facial-selfie {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.visitor-facial-camera-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.visitor-facial-camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visitor-facial-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 250px;
+  border: 3px solid red;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Vehicle Recognition Styles */
+.visitor-vehicle-container {
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.visitor-expected-plate {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.visitor-vehicle-camera-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.visitor-vehicle-camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visitor-vehicle-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 225px;
+  border: 4px solid red;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.visitor-vehicle-result {
+  margin-top: 15px;
+}
+
+/* ID Tab Styles */
+.visitor-id-tab-image {
+  max-width: 100%;
+  max-height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.visitor-ocr-results {
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f8f9fa;
 }
